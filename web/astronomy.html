@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>علماء الفلك</title>
+    <style>
+        /* إعدادات أساسية */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            background: url(pics/space.jpg) no-repeat center center fixed; /* خلفية فضاء خارجي */
+            background-size: cover;
+            text-align: right; /* محاذاة النصوص لليمين */
+            overflow-x: hidden; /* منع التمرير الأفقي */
+        }
+
+        /* تنسيق الرأس */
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-bottom: 4px solid #007acc; /* لون أزرق */
+            text-align: center; /* محاذاة النصوص في الرأس للوسط */
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* إضافة ظل خفيف للرأس */
+        }
+
+        header h1 {
+            margin: 0;
+            color: #00bfff; /* لون أزرق فاتح */
+            font-size: 2.5em;
+            font-family: 'Georgia', serif; /* خط أنيق للعناوين */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* إضافة ظل للنص */
+            display: inline-block; /* حتى يتمكن الزر من الانتقال إلى الجانب */
+        }
+
+        /* زر العودة */
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        /* تنسيق القسم الرئيسي */
+        main {
+            padding: 20px;
+            max-width: 900px;
+            margin: 20px auto;
+            background: rgba(0, 0, 0, 0.7); /* خلفية داكنة للصندوق */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* إضافة ظل خفيف للصندوق */
+            padding-top: 20px; /* إضافة مسافة قبل أول اسم */
+            text-align: center; /* محاذاة المحتوى للوسط */
+        }
+
+        /* مربع اختيار المجال */
+        .choose-field {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            margin-right: 20px; /* مسافة من اليمين */
+            border-radius: 2px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* إضافة ظل خفيف */
+            text-align: center; /* محاذاة النصوص للوسط */
+            width: 200px; /* عرض ثابت */
+        }
+
+        .choose-field p {
+            margin: 0;
+            color: #fff;
+            font-size: 1.2em;
+        }
+
+        /* تنسيق قائمة العلماء في الفلك */
+        .scientists-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* توسيط العناصر */
+        }
+
+        .scientist {
+            background: rgba(0, 0, 0, 0.7); /* خلفية داكنة للمربع */
+            padding: 20px; /* زيادة الحشو */
+            margin: 10px;
+            border-radius: 10px;
+            width: 300px; /* عرض ثابت */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* إضافة ظل خفيف */
+            text-align: center; /* محاذاة النصوص للوسط */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer; /* تغيير المؤشر عند التحويم */
+        }
+
+        .scientist:hover {
+            transform: translateY(-5px); /* تحريك المربع قليلاً لأعلى */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* تغيير الظل عند التحويم */
+        }
+
+        .scientist h2 {
+            margin: 0;
+            color: #00bfff; /* لون أزرق فاتح */
+            font-size: 1.8em; /* زيادة حجم العنوان */
+            font-family: 'Georgia', serif; /* خط أنيق للعناوين */
+        }
+
+        .scientist p {
+            margin: 10px 0 0;
+            color: #dcdcdc; /* لون نص خفيف */
+            font-size: 1.2em; /* زيادة حجم النص */
+        }
+
+        /* تنسيق التذييل */
+        footer {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            text-align: center; /* محاذاة النصوص لليمين في التذييل */
+            border-top: 4px solid #007acc; /* لون أزرق */
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.5); /* إضافة ظل خفيف للتذييل */
+        }
+
+        footer p {
+            margin: 0;
+            color: #00bfff; /* لون أزرق فاتح */
+            font-size: 1.2em; /* زيادة حجم النص */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="andalusian-scientists.html" class="back-button">العودة إلى الصفحة الرئيسية</a>
+        <h1>علماء الفلك</h1>
+    </header>
+    <main>
+        <ul class="scientists-list">
+            <li class="scientist">
+                <h2>البيروني</h2>
+                <p>أبو الريحان البيروني، كان عالماً موسوعياً قدم إسهامات كبيرة في علم الفلك، حيث قدم نظريات عن دوران الأرض وأبعاد الكواكب.</p>
+            </li>
+            <li class="scientist">
+                <h2>البزجي</h2>
+                <p>أبو الحسن البزجي، كان من أبرز الفلكيين في العصر العباسي، وقام بقياسات دقيقة لحركة الكواكب.</p>
+            </li>
+            <li class="scientist">
+                <h2>الفارابي</h2>
+                <p>أبو نصر الفارابي، كان عالماً وفيلسوفاً، وله دراسات عديدة في الفلك وأثر في تطوير الأرصاد الفلكية.</p>
+            </li>
+            <li class="scientist">
+                <h2>السوفي</h2>
+                <p>عبد الرحمن السوفي، كان عالماً في الفلك من القرن العاشر، وله كتابات عن الأبراج والنجوم.</p>
+            </li>
+            <li class="scientist">
+                <h2>البتاني</h2>
+                <p>البتاني، كان عالماً فلكياً كبيراً، عرف بدقة أرصاده وحساباته الفلكية وقدم جدولاً للنجوم الثابتة.</p>
+            </li>
+            <li class="scientist">
+                <h2>الخوارزمي</h2>
+                <p>محمد بن موسى الخوارزمي، كان رياضياً وفلكياً، وقدم إسهامات كبيرة في الجداول الفلكية وحساب المواقع السماوية.</p>
+            </li>
+            <li class="scientist">
+                <h2>الكندي</h2>
+                <p>يعقوب بن إسحاق الكندي، كان فيلسوفاً وعالماً، وقدم أبحاثاً مهمة في الفلك والفيزياء.</p>
+            </li>
+        </ul>
+    </main>
+    <footer>
+        <p>&copy; 2024 العلوم و المعارف عبر عصور الحضارة الإسلامية. جميع الحقوق محفوظة.</p>
+    </footer>
+</body>
+</html>

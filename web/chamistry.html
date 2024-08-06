@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مجال الكيمياء</title>
+    <style>
+        /* إعدادات أساسية */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            background: url(pics/chamistry.jfif) no-repeat center center fixed; /* خلفية فضاء خارجي */
+            background-size: cover;
+            text-align: right; /* محاذاة النصوص لليمين */
+            overflow-x: hidden; /* منع التمرير الأفقي */
+        }
+
+        /* تنسيق الرأس */
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-bottom: 4px solid #2a9d8f; /* لون أخضر */
+            text-align: center; /* محاذاة النصوص في الرأس للوسط */
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* إضافة ظل خفيف للرأس */
+        }
+
+        header h1 {
+            margin: 0;
+            color: #2a9d8f; /* لون أخضر فاتح */
+            font-size: 2.5em;
+            font-family: 'Georgia', serif; /* خط أنيق للعناوين */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* إضافة ظل للنص */
+            display: inline-block; /* حتى يتمكن الزر من الانتقال إلى الجانب */
+        }
+
+        /* زر العودة */
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        /* تنسيق القسم الرئيسي */
+        main {
+            padding: 20px;
+            max-width: 900px;
+            margin: 20px auto;
+            background: rgba(0, 0, 0, 0.7); /* خلفية داكنة للصندوق */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* إضافة ظل خفيف للصندوق */
+        }
+
+        /* تنسيق قائمة المجالات */
+        .fields-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            width: 100%; /* عرض القائمة */
+        }
+
+        .field {
+            background: rgba(0, 0, 0, 0.5); /* خلفية داكنة لكل عنصر */
+            padding: 20px; /* زيادة الحشو */
+            margin-bottom: 20px; /* زيادة المسافة بين العناصر */
+            border-radius: 10px;
+            border-left: 5px solid #2a9d8f; /* شريط أخضر على الجانب */
+        }
+
+        .field h2 {
+            margin: 0;
+            color: #2a9d8f; /* لون أخضر فاتح */
+            font-size: 1.5em; /* زيادة حجم العنوان */
+            font-family: 'Georgia', serif; /* خط أنيق للعناوين */
+        }
+
+        .field p {
+            margin: 10px 0 0;
+            color: #dcdcdc; /* لون نص خفيف */
+            font-size: 1em; /* زيادة حجم النص */
+        }
+
+        /* تنسيق التذييل */
+        footer {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            text-align: center; /* محاذاة النصوص لليمين في التذييل */
+            border-top: 4px solid #2a9d8f; /* لون أخضر */
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.5); /* إضافة ظل خفيف للتذييل */
+        }
+
+        footer p {
+            margin: 0;
+            color: #2a9d8f; /* لون أخضر فاتح */
+            font-size: 1.2em; /* زيادة حجم النص */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="andalusian-scientists.html" class="back-button" >العودة إلى الصفحة الرئيسية</a>
+        <h1>مجال الكيمياء</h1>
+    </header>
+    <main>
+        <ul class="fields-list">
+            <li class="field">
+                <h2>جابر بن حيان</h2>
+                <p>يعتبر "جابر بن حيان" الأب الروحي للكيمياء. عاش في القرن الثامن الميلادي وقدم العديد من الاكتشافات والمساهمات في علم الكيمياء. له العديد من الكتب والرسائل التي توضح تجاربه وابتكاراته.</p>
+            </li>
+            <li class="field">
+                <h2>الرازي</h2>
+                <p>أبو بكر الرازي كان عالماً وطبيباً فارسي الأصل. له إسهامات كبيرة في الكيمياء والطب. ألف كتاب "الأسرار" في الكيمياء وشرح فيه العديد من العمليات الكيميائية.</p>
+            </li>
+            <li class="field">
+                <h2>ابن سينا</h2>
+                <p>ابن سينا، المعروف أيضاً باسم "الشيخ الرئيس"، كان عالماً في الطب والكيمياء والفلسفة. أسس العديد من النظريات الكيميائية والطبية وله كتب عديدة أهمها "القانون في الطب".</p>
+            </li>
+            <li class="field">
+                <h2>الخوارزمي</h2>
+                <p>محمد بن موسى الخوارزمي كان عالم رياضيات وكيمياء، وله العديد من الإسهامات في تطوير علم الكيمياء. يعتبر من أوائل العلماء الذين اهتموا بالتحليل الكيميائي والتفاعلات الكيميائية.</p>
+            </li>
+            <li class="field">
+                <h2>البيروني</h2>
+                <p>أبو الريحان البيروني كان عالماً موسوعياً له إسهامات في العديد من المجالات بما في ذلك الكيمياء. كتب العديد من الكتب والرسائل التي توثق تجاربه الكيميائية واكتشافاته.</p>
+            </li>
+        </ul>
+    </main>
+    <footer>
+        <p>&copy; 2024 العلوم و المعارف عبر عصور الحضارة الإسلامية. جميع الحقوق محفوظة.</p>
+    </footer>
+</body>
+</html>
